@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Janith Nishen — Portfolio
 
-## Getting Started
+A responsive Next.js implementation of the five supplied Figma screens, with compact top navigation and simplified content.
 
-First, run the development server:
+## Run locally
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Screens
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/` — Home, with interactive profile and skills code tabs.
+- `/about` — Biography, education, and skills (`#skills`).
+- `/projects` — Project showcase with category filters.
+- `/experience` — Experience timeline and contact form (`#contact`).
+- `/admin` — Local content manager for projects, availability, profile, skills, and résumé.
 
-## Learn More
+## Content and contact
 
-To learn more about Next.js, take a look at the following resources:
+The content manager uses browser local storage. Changes persist in the same browser and sync between tabs; they are not published to a server or shared with other visitors. This is a local editing prototype, without authentication or a database.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The Figma source uses a placeholder email and provides no résumé asset. Add a real email and upload a PDF (up to 2 MB) in the content manager to enable email preparation and résumé downloads. The contact form opens the visitor's email app; it does not claim to send email. Without a configured address, it copies the message for LinkedIn.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Project links open the GitHub profile supplied in Figma. Individual repository and live-demo URLs were not supplied. Portfolio text comes from the design and should be reviewed before publication.
 
-## Deploy on Vercel
+## Validation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npm run lint
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Source design: https://www.figma.com/design/iQwDeqjEivSdWLMvG1nN1Z/Untitled?node-id=0-1
+
+## Source organization
+
+- `src/app/` contains the route entry points and root layout.
+- `src/components/home/`, `about/`, `projects/`, and `experience/` contain each screen and its related components.
+- `src/components/admin/` contains the content manager and separate project, profile, skills, and resume editors.
+- `src/components/layout/` contains the header and footer.
+- `src/components/ui/` contains shared tags, window dots, and the resume link.
+- `src/context/portfolio-provider.tsx` owns profile state, local storage, and cross-tab updates.
+- `src/data/` contains the initial portfolio content and skill categories.
+- `src/types/portfolio.ts` defines the shared profile and project types.
+
+To debug a screen, start with its `*-screen.tsx` file. To debug an admin form, open its individual editor component. Shared storage behavior lives in the provider.

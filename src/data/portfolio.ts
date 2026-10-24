@@ -1,0 +1,68 @@
+import type { Profile } from "@/types/portfolio";
+
+export const initial: Profile = {
+  available: true,
+  headline: "I build software that solves real problems.",
+  email: "",
+  github: "https://github.com/janithnishen",
+  resume: "",
+  resumeName: "",
+  skills: [
+    "TypeScript",
+    "JavaScript",
+    "Java",
+    "Python",
+    "C",
+    "React.js",
+    "React Native",
+    "HTML5",
+    "CSS3",
+    "NestJS",
+    "Node.js",
+    "Express.js",
+    "REST APIs",
+    "Firebase",
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "Git",
+    "GitHub",
+    "Postman",
+    "VS Code",
+    "Android Studio",
+  ],
+  projects: [
+    {
+      id: "credit",
+      title: "Smart Credit+",
+      category: "Fintech / Mobile",
+      description:
+        "A decentralized peer-to-peer lending platform that connects underserved borrowers with microloans, transparent repayments, and objective credit scoring.",
+      tags: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "NestJS",
+        "Firebase",
+        "PostgreSQL",
+      ],
+      published: true,
+    },
+    {
+      id: "gallery",
+      title: "Smart Shooting Gallery",
+      category: "Embedded / IoT",
+      description:
+        "An interactive shooting range with a wireless glove controller, precision target tracking, and real-time telemetry powered by dual microcontrollers.",
+      tags: [
+        "ESP32",
+        "Arduino",
+        "C / C++",
+        "WebSockets",
+        "Node.js",
+        "FreeRTOS",
+      ],
+      published: true,
+    },
+  ],
+};
