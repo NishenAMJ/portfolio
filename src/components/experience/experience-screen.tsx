@@ -1,4 +1,5 @@
 import { Tags } from "@/components/ui/tags";
+import { academics, leadership } from "@/data/academics";
 import { ContactForm } from "./contact-form";
 
 export function ExperienceScreen() {
@@ -9,17 +10,21 @@ export function ExperienceScreen() {
         Experience & Journey<span className="accent">.</span>
       </h1>
       <p className="lead">
-        A foundation in technology. A curiosity that keeps growing.
+        Education, leadership, and what I’m studying now.
       </p>
       <div className="experience-grid">
         <section className="timeline" aria-label="Experience timeline">
+          <h2 className="timeline-group">Education</h2>
           <article>
-            <small className="accent">2022 — Present · Expected 2026</small>
-            <h3>B.Sc. (Hons) in Information Technology</h3>
-            <p className="accent">University of Moratuwa</p>
+            <small className="accent">
+              {academics.startYear} — Present · Expected{" "}
+              {academics.expectedGraduation}
+            </small>
+            <h3>{academics.degree}</h3>
+            <p className="accent">{academics.institution}</p>
             <p>
-              Building a strong foundation in software systems, computational
-              thinking, and modern application development.
+              Coursework in software architecture, algorithms, databases, and
+              object-oriented design.
             </p>
             <Tags
               items={[
@@ -30,10 +35,11 @@ export function ExperienceScreen() {
               ]}
             />
           </article>
+          <h2 className="timeline-group">Leadership & volunteering</h2>
           <article>
             <small className="green">2024 — 2026</small>
-            <h3>Organizing Committee & Technical Volunteer</h3>
-            <p className="accent">Faculty Career Fair 2026</p>
+            <h3>{leadership.role}</h3>
+            <p className="accent">{leadership.event}</p>
             <p>
               Supporting recruitment logistics, corporate relations, and
               technical operations for the university’s annual career fair.
@@ -42,8 +48,9 @@ export function ExperienceScreen() {
               items={["Teamwork", "Corporate Relations", "Operational Support"]}
             />
           </article>
+          <h2 className="timeline-group">Currently learning</h2>
           <article>
-            <h3>Continuous learning</h3>
+            <h3>Courses & self-study</h3>
             <div className="learning-row">
               <span>Full-Stack Development & TypeScript</span>
               <span className="green">Completed</span>

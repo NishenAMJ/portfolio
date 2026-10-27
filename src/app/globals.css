@@ -26,7 +26,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.65;
 }
@@ -917,7 +917,7 @@ footer {
   border-radius: 50%;
   box-shadow: 0 0 0 5px #211e29;
 }
-.timeline article:nth-child(2):before {
+.timeline article:nth-child(4):before {
   background: var(--green);
 }
 .timeline h3 {
@@ -1617,4 +1617,40 @@ dialog {
 dialog::backdrop {
   background: #0009;
   backdrop-filter: blur(4px);
+}
+
+.timeline-group {
+  margin: 28px 0 12px;
+  font: 11px var(--font-geist-mono), monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9c92ac;
+}
+.timeline-group:first-child {
+  margin-top: 0;
+}
+.timeline {
+  gap: 14px;
+}
+.used-in {
+  display: block;
+  margin-top: 12px;
+  color: #9c92ac;
+}
+.preview-caption {
+  display: block;
+  margin-top: 8px;
+  color: #9c92ac;
+}
+.project-shots {
+  display: grid;
+  gap: 12px;
+}
+.project-shots img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.project-result {
+  margin-top: 12px;
 }

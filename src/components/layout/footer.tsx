@@ -13,14 +13,12 @@ export function Footer() {
           <a href={profile.github} target="_blank" rel="noreferrer">
             GitHub ↗
           </a>
-          <a
-            href="https://www.linkedin.com/in/janithnishen/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">
             LinkedIn ↗
           </a>
-          <Link href="/admin">Manage content</Link>
+          {process.env.NODE_ENV !== "production" && (
+            <Link href="/admin">Manage content</Link>
+          )}
         </div>
       </div>
     </footer>

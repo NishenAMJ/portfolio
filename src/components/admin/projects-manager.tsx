@@ -21,6 +21,16 @@ export function ProjectsManager({ profile, persist }: EditorSectionProps) {
         .split(",")
         .map((s) => s.trim())
         .filter(Boolean),
+      role: String(d.get("role")).trim(),
+      result: String(d.get("result")).trim(),
+      status: String(d.get("status")).trim(),
+      dateRange: String(d.get("dateRange")).trim(),
+      repoUrl: String(d.get("repoUrl")).trim(),
+      demoUrl: String(d.get("demoUrl")).trim(),
+      screenshots: String(d.get("screenshots"))
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean),
     };
     persist({
       ...profile,

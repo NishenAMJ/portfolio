@@ -17,9 +17,7 @@ export function ProjectsScreen() {
         <div>
           <h1>Things I’ve built.</h1>
           <p className="lead">
-            From mobile applications to connected hardware.
-            <br />
-            Real problems, thoughtfully engineered solutions.
+            A team-led mobile lending platform and an ESP32-based IoT system.
           </p>
         </div>
         <div className="filters" aria-label="Filter projects">

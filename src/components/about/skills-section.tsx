@@ -3,6 +3,17 @@
 import { useProfile } from "@/context/portfolio-provider";
 import { Tags } from "@/components/ui/tags";
 import { groups } from "@/data/skill-groups";
+import type { Project } from "@/types/portfolio";
+
+function UsedIn({ items, projects }: { items: string[]; projects: Project[] }) {
+  const used = projects.filter((p) => p.tags.some((t) => items.includes(t)));
+  if (!used.length) return null;
+  return (
+    <small className="used-in">
+      Used in {used.map((p) => p.title).join(", ")}
+    </small>
+  );
+}
 
 export function SkillsSection() {
   const { profile } = useProfile();
@@ -11,7 +22,7 @@ export function SkillsSection() {
     <section id="skills" className="skills-section">
       <div className="eyebrow">TECH STACK</div>
       <h2>My development toolkit.</h2>
-      <p>The languages, frameworks, and tools I use to bring ideas to life.</p>
+      <p>Grouped by area, with the projects where each group was used.</p>
       <div className="skills-grid">
         {groups.map((g, i) => (
           <article className="skill-card" key={g.title}>
@@ -21,6 +32,10 @@ export function SkillsSection() {
             </div>
             <p>{g.description}</p>
             <Tags items={g.items.filter((s) => profile.skills.includes(s))} />
+            <UsedIn
+              items={g.items.filter((s) => profile.skills.includes(s))}
+              projects={profile.projects.filter((p) => p.published)}
+            />
           </article>
         ))}
         {profile.skills.some((s) => !known.includes(s)) && (

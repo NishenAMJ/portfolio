@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useProfile } from "@/context/portfolio-provider";
 import { ResumeLink } from "@/components/ui/resume-link";
+import { Tags } from "@/components/ui/tags";
+import { academics, leadership } from "@/data/academics";
 import { CodeEditor } from "./code-editor";
 
 export function HomeScreen() {
@@ -23,10 +25,10 @@ export function HomeScreen() {
           </h1>
           <h2>{profile.headline}</h2>
           <p>
-            Third-year Information Technology undergraduate at the{" "}
-            <span className="bright">University of Moratuwa.</span> Building
-            scalable backend systems, robust APIs, and thoughtful mobile
-            experiences.
+            {academics.standing} at the{" "}
+            <span className="bright">{academics.institution}.</span> I work on
+            REST APIs, databases, and React Native apps, and I led the
+            five-person team behind Smart Credit+.
           </p>
           <div className="actions">
             <Link className="button primary" href="/projects">
@@ -45,12 +47,22 @@ export function HomeScreen() {
               width={14.667}
               height={12}
             />
-            University of Moratuwa · Faculty of Information Technology
+            {academics.institution} · {academics.faculty}
           </div>
         </div>
         <CodeEditor />
       </section>
-      <div className="capabilities container"></div>
+      <div className="capabilities container">
+        <span>AT A GLANCE</span>
+        <Tags
+          items={[
+            `${academics.degree.replace("B.Sc. (Hons) in ", "BSc (Hons) ")}`,
+            "Team Lead · Smart Credit+",
+            `${leadership.event} volunteer`,
+            "Focus: backend & mobile",
+          ]}
+        />
+      </div>
     </main>
   );
 }

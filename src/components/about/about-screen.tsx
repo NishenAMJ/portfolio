@@ -16,20 +16,17 @@ export function AboutScreen() {
           <p className="lead">
             I’m an Information Technology undergraduate at the{" "}
             <span className="accent">University of Moratuwa</span>, passionate
-            about resilient systems and seamless mobile experiences.
+            focused on backend services and mobile apps.
           </p>
           <p>
-            I care about clean abstractions, efficient databases, and end-to-end
-            type safety. From backend services to mobile applications, I turn
-            complex requirements into software that is simple to use and easy to
-            maintain.
+            I design REST APIs with JWT and role-based access, model data in
+            PostgreSQL and Firebase, and share types end to end in TypeScript. I
+            led a five-person team on Smart Credit+ and wrote firmware for the
+            Smart Shooting Gallery.
           </p>
           <div className="callout">
-            <h3>What I’m looking for</h3>
-            <p>
-              Software Engineering and Full-Stack internship opportunities where
-              I can contribute, learn, and build meaningful products.
-            </p>
+            <h3>Looking for</h3>
+            <p>A Software Engineering or Full-Stack internship.</p>
           </div>
           <div className="actions">
             <Link className="button primary" href="/projects">

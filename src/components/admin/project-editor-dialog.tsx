@@ -71,6 +71,70 @@ export function ProjectEditorDialog({
               maxLength={300}
             />
           </label>
+          <label>
+            Your role
+            <input
+              name="role"
+              defaultValue={editing.role ?? ""}
+              placeholder="e.g. Built the REST API and database schema"
+              maxLength={150}
+            />
+          </label>
+          <label>
+            Result (real outcome only)
+            <input
+              name="result"
+              defaultValue={editing.result ?? ""}
+              maxLength={200}
+            />
+          </label>
+          <div className="form-grid">
+            <label>
+              Status
+              <input
+                name="status"
+                defaultValue={editing.status ?? ""}
+                placeholder="Completed"
+                maxLength={40}
+              />
+            </label>
+            <label>
+              Dates
+              <input
+                name="dateRange"
+                defaultValue={editing.dateRange ?? ""}
+                placeholder="Jan 2025 – Jun 2025"
+                maxLength={40}
+              />
+            </label>
+            <label>
+              Repository URL
+              <input
+                name="repoUrl"
+                type="url"
+                pattern="https://.*"
+                defaultValue={editing.repoUrl ?? ""}
+              />
+            </label>
+            <label>
+              Live demo URL
+              <input
+                name="demoUrl"
+                type="url"
+                pattern="https://.*"
+                defaultValue={editing.demoUrl ?? ""}
+              />
+            </label>
+          </div>
+          <label>
+            Screenshot paths, comma-separated (files in /public)
+            <input
+              name="screenshots"
+              defaultValue={(editing.screenshots ?? []).join(", ")}
+              placeholder="/projects/credit-1.webp, /projects/credit-2.webp"
+              maxLength={500}
+            />
+          </label>
           <div className="actions">
             <button className="button primary" type="submit">
               Save project

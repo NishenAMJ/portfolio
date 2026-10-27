@@ -2,9 +2,12 @@ import type { Profile } from "@/types/portfolio";
 
 export const initial: Profile = {
   available: true,
-  headline: "I build software that solves real problems.",
+  headline:
+    "Information Technology undergraduate building backend systems and mobile products.",
   email: "",
   github: "https://github.com/janithnishen",
+  linkedin: "https://www.linkedin.com/in/janithnishen/",
+  // Put cv.pdf in /public and set this to "/cv.pdf" to enable the CV button.
   resume: "",
   resumeName: "",
   skills: [
@@ -47,6 +50,14 @@ export const initial: Profile = {
         "PostgreSQL",
       ],
       published: true,
+      subtitle: "Decentralized P2P Lending Platform",
+      role: "Team Lead · 5-member team",
+      highlights: [
+        "Cross-platform borrower app with offline caching and biometric authentication.",
+        "Modular REST backend with JWT authentication and role-based access.",
+        "Automated credit scoring and verifiable repayment workflows.",
+      ],
+      // Add when available: result, status, dateRange, repoUrl, demoUrl, screenshots.
     },
     {
       id: "gallery",
@@ -63,6 +74,13 @@ export const initial: Profile = {
         "FreeRTOS",
       ],
       published: true,
+      subtitle: "Wireless Control & Live Telemetry",
+      role: "Firmware & Systems Engineering",
+      highlights: [
+        "ESP32 and Arduino communication over UART and RF.",
+        "Gesture-controlled wearable with flex and gyroscope sensors.",
+        "Live scores and diagnostics delivered over WebSockets.",
+      ],
     },
   ],
 };

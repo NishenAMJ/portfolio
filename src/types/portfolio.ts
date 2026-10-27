@@ -5,6 +5,15 @@ export type Project = {
   description: string;
   tags: string[];
   published: boolean;
+  subtitle?: string;
+  role?: string;
+  highlights?: string[];
+  result?: string;
+  status?: string;
+  dateRange?: string;
+  repoUrl?: string;
+  demoUrl?: string;
+  screenshots?: string[];
 };
 
 export type Profile = {
@@ -12,6 +21,7 @@ export type Profile = {
   headline: string;
   email: string;
   github: string;
+  linkedin: string;
   resume: string;
   resumeName: string;
   skills: string[];

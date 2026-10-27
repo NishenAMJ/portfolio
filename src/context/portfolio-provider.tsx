@@ -51,7 +51,8 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         saved.github.startsWith("https://") &&
         typeof saved.resume === "string" &&
         (!saved.resume ||
-          saved.resume.startsWith("data:application/pdf;base64,")) &&
+          saved.resume.startsWith("data:application/pdf;base64,") ||
+          /^\/[\w./-]+\.pdf$/.test(saved.resume)) &&
         typeof saved.resumeName === "string" &&
         typeof saved.available === "boolean" &&
         Array.isArray(saved.projects) &&

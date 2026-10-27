@@ -30,15 +30,11 @@ export function ContactForm() {
     <section id="contact" className="contact-card panel">
       <h2>Have an opportunity in mind?</h2>
       <p>
-        I’m looking for Software Engineering and Full-Stack internship
-        opportunities. Let’s build something meaningful.
+        Recruiters and engineering teams: tell me about the role and I’ll reply
+        with relevant project details.
       </p>
       <div className="contact-links">
-        <a
-          href="https://www.linkedin.com/in/janithnishen/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={profile.linkedin} target="_blank" rel="noreferrer">
           LinkedIn ↗
         </a>
         {profile.email && (

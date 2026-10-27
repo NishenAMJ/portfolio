@@ -1,8 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Tags } from "@/components/ui/tags";
 import { Dots } from "@/components/ui/window-dots";
 import type { Project } from "@/types/portfolio";
 import { ProjectPreview } from "./project-preview";
+
+const isHttps = (url?: string): url is string => !!url?.startsWith("https://");
+const isImage = (src: string) => src.startsWith("/") || isHttps(src);
 
 export function ProjectCard({
   project: p,
@@ -13,6 +17,8 @@ export function ProjectCard({
   index: number;
   github: string;
 }) {
+  const screenshots = (p.screenshots ?? []).filter(isImage);
+  const meta = [p.status, p.dateRange].filter(Boolean).join(" · ");
   return (
     <article className="project-card">
       <div className="panel-bar">
@@ -21,55 +27,83 @@ export function ProjectCard({
         <span className="project-category">{p.category}</span>
       </div>
       <div className="project-content">
-        <ProjectPreview kind={p.id} />
+        {screenshots.length > 0 ? (
+          <div className="project-shots">
+            {screenshots.map((src, n) => (
+              <Image
+                key={src}
+                src={src}
+                alt={`${p.title} screenshot ${n + 1}`}
+                width={640}
+                height={400}
+                unoptimized={src.startsWith("https://")}
+              />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <ProjectPreview kind={p.id} />
+            <small className="preview-caption">
+              Illustrative preview, not live data.
+            </small>
+          </div>
+        )}
         <div className="project-info">
           <div className="eyebrow">
             0{i + 1} / {p.category}
+            {meta && ` · ${meta}`}
           </div>
           <h2>{p.title}</h2>
-          <h3>
-            {p.id === "credit"
-              ? "Decentralized P2P Lending Platform"
-              : p.id === "gallery"
-                ? "Wireless Control & Live Telemetry"
-                : ""}
-          </h3>
+          {p.subtitle && <h3>{p.subtitle}</h3>}
           <p>{p.description}</p>
-          {["credit", "gallery"].includes(p.id) && (
+          {(p.role || p.highlights?.length) && (
             <div className="contributions">
-              <h4>
-                {p.id === "credit"
-                  ? "Team Lead · 5-member team"
-                  : "Firmware & Systems Engineering"}
-              </h4>
-              <ul>
-                {(p.id === "credit"
-                  ? [
-                      "Cross-platform borrower app with offline caching and biometric authentication.",
-                      "Modular REST backend with JWT authentication and role-based access.",
-                      "Automated credit scoring and verifiable repayment workflows.",
-                    ]
-                  : [
-                      "ESP32 and Arduino communication over UART and RF.",
-                      "Gesture-controlled wearable with flex and gyroscope sensors.",
-                      "Live scores and diagnostics delivered over WebSockets.",
-                    ]
-                ).map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
+              {p.role && <h4>{p.role}</h4>}
+              {p.highlights && (
+                <ul>
+                  {p.highlights.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+              )}
             </div>
+          )}
+          {p.result && (
+            <p className="project-result">
+              <strong>Result:</strong> {p.result}
+            </p>
           )}
           <Tags items={p.tags} />
           <div className="actions">
-            <a
-              className="button primary"
-              href={github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Explore GitHub ↗
-            </a>
+            {isHttps(p.repoUrl) ? (
+              <a
+                className="button primary"
+                href={p.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View repository ↗
+              </a>
+            ) : (
+              <a
+                className="button secondary"
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub profile ↗
+              </a>
+            )}
+            {isHttps(p.demoUrl) && (
+              <a
+                className="button secondary"
+                href={p.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live demo ↗
+              </a>
+            )}
             <Link className="button secondary" href="/experience#contact">
               Discuss this project
             </Link>

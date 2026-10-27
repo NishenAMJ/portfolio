@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Dots } from "@/components/ui/window-dots";
+import { academics, leadership } from "@/data/academics";
 
 export function AcademicCard() {
   return (
@@ -20,22 +21,22 @@ export function AcademicCard() {
           </span>
           <div>
             <small>INSTITUTION</small>
-            <h3>University of Moratuwa</h3>
-            <p>Faculty of Information Technology</p>
+            <h3>{academics.institution}</h3>
+            <p>{academics.faculty}</p>
           </div>
         </div>
         <div className="academic-row">
           <small>DEGREE</small>
-          <h3>B.Sc. (Hons) in Information Technology</h3>
-          <p>Third-year undergraduate</p>
+          <h3>{academics.degree}</h3>
+          <p>{academics.standing}</p>
         </div>
         <div className="academic-row">
           <small>LEADERSHIP & COMMUNITY</small>
-          <h3>Faculty Career Fair 2026</h3>
-          <p>Organizing Committee & Technical Volunteer</p>
+          <h3>{leadership.event}</h3>
+          <p>{leadership.role}</p>
         </div>
         <div className="academic-bottom">
-          <span>Moratuwa, Sri Lanka</span>
+          <span>{academics.location}</span>
           <span className="accent">Full-Stack Engineering</span>
         </div>
       </div>
