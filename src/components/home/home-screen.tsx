@@ -4,9 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useProfile } from "@/context/portfolio-provider";
 import { ResumeLink } from "@/components/ui/resume-link";
-import { Tags } from "@/components/ui/tags";
-import { academics, leadership } from "@/data/academics";
+import { TypedRole } from "@/components/ui/typed-role";
+import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
+import { academics } from "@/data/academics";
 import { CodeEditor } from "./code-editor";
+
+const roles = ["Backend Developer", "Mobile App Developer", "Full-Stack Engineer"];
 
 export function HomeScreen() {
   const { profile } = useProfile();
@@ -21,48 +24,63 @@ export function HomeScreen() {
             </div>
           )}
           <h1>
-            Hi, I’m <strong>Janith Nishen.</strong>
+            <span className="hi">Hi, I’m</span>
+            <strong>Janith</strong>
+            <strong className="grad">Nishen</strong>
           </h1>
+          <TypedRole roles={roles} />
           <h2>{profile.headline}</h2>
           <p>
             {academics.standing} at the{" "}
             <span className="bright">{academics.institution}.</span> I work on
-            REST APIs, databases, and React Native apps, and I led the
-            five-person team behind Smart Credit+.
+            REST APIs, databases, and React Native apps, and I built the
+            borrower mobile app for Smart Credit+.
           </p>
           <div className="actions">
             <Link className="button primary" href="/projects">
-              Explore Projects{" "}
+              View My Projects{" "}
               <Image src="/design/explore.svg" alt="" width={12} height={12} />
             </Link>
-            <ResumeLink />
-            <Link className="button secondary" href="/about">
-              About me ↗
+            <Link className="button secondary" href="/experience#contact">
+              Contact Me
             </Link>
+            <ResumeLink />
           </div>
-          <div className="affiliation">
-            <Image
-              src="/design/education.svg"
-              alt=""
-              width={14.667}
-              height={12}
-            />
-            {academics.institution} · {academics.faculty}
+          <div className="socials">
+            <a href={profile.github} aria-label="GitHub" target="_blank" rel="noreferrer">
+              <GithubIcon />
+            </a>
+            <a href={profile.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">
+              <LinkedinIcon />
+            </a>
+            <a
+              href={profile.email ? `mailto:${profile.email}` : "/experience#contact"}
+              aria-label="Email"
+            >
+              <MailIcon />
+            </a>
           </div>
         </div>
+        <div className="hero-portrait">
+          <div className="portrait-frame">
+          <Image
+            src="/profile-cutout.webp"
+            alt="Janith Nishen"
+            width={1003}
+            height={1041}
+            sizes="(max-width: 800px) 90vw, 460px"
+            loading="eager"
+          />
+          </div>
+          <div className="portrait-badge">
+            <small>DRIVEN BY CURIOSITY</small>
+            <strong>Building with purpose</strong>
+          </div>
+        </div>
+      </section>
+      <section id="profile-code" className="home-code container" aria-label="Profile in code">
         <CodeEditor />
       </section>
-      <div className="capabilities container">
-        <span>AT A GLANCE</span>
-        <Tags
-          items={[
-            `${academics.degree.replace("B.Sc. (Hons) in ", "BSc (Hons) ")}`,
-            "Team Lead · Smart Credit+",
-            `${leadership.event} volunteer`,
-            "Focus: backend & mobile",
-          ]}
-        />
-      </div>
     </main>
   );
 }

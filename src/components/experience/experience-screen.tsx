@@ -10,11 +10,11 @@ export function ExperienceScreen() {
         Experience & Journey<span className="accent">.</span>
       </h1>
       <p className="lead">
-        Education, leadership, and what I’m studying now.
+        Education, experience, leadership, and certifications.
       </p>
       <div className="experience-grid">
         <section className="timeline" aria-label="Experience timeline">
-          <h2 className="timeline-group">Education</h2>
+          <h2 id="education" className="timeline-group">Education</h2>
           <article>
             <small className="accent">
               {academics.startYear} — Present · Expected{" "}
@@ -35,34 +35,33 @@ export function ExperienceScreen() {
               ]}
             />
           </article>
-          <h2 className="timeline-group">Leadership & volunteering</h2>
+          <h2 id="work" className="timeline-group">Work experience</h2>
+          <article>
+            <small className="green">Internship</small>
+            <h3>Student Intern</h3>
+            <p className="accent">People’s Bank</p>
+          </article>
+          <article>
+            <small className="accent">Until 2022</small>
+            <h3>Secondary education</h3>
+            <p className="accent">Mahinda College</p>
+            <p>Logistics committee member.</p>
+          </article>
+          <h2 id="leadership" className="timeline-group">Leadership & volunteering</h2>
           <article>
             <small className="green">2024 — 2026</small>
             <h3>{leadership.role}</h3>
             <p className="accent">{leadership.event}</p>
-            <p>
-              Supporting recruitment logistics, corporate relations, and
-              technical operations for the university’s annual career fair.
-            </p>
-            <Tags
-              items={["Teamwork", "Corporate Relations", "Operational Support"]}
-            />
           </article>
-          <h2 className="timeline-group">Currently learning</h2>
+          <h2 id="certifications" className="timeline-group">Certifications</h2>
           <article>
-            <h3>Courses & self-study</h3>
-            <div className="learning-row">
-              <span>Full-Stack Development & TypeScript</span>
-              <span className="green">Completed</span>
-            </div>
-            <div className="learning-row">
-              <span>Cloud & Distributed Systems</span>
-              <span className="green">Completed</span>
-            </div>
-            <div className="learning-row">
-              <span>Real-Time Systems & IoT</span>
-              <span className="accent">Learning</span>
-            </div>
+            <h3>Python for Beginners</h3>
+            <p className="accent">University of Moratuwa</p>
+          </article>
+          <article>
+            <small className="accent">Jul 2024</small>
+            <h3>Responsive Web Design</h3>
+            <p className="accent">freeCodeCamp</p>
           </article>
         </section>
         <ContactForm />

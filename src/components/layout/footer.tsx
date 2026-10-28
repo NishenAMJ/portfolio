@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useProfile } from "@/context/portfolio-provider";
 
 export function Footer() {
@@ -16,9 +15,6 @@ export function Footer() {
           <a href={profile.linkedin} target="_blank" rel="noreferrer">
             LinkedIn ↗
           </a>
-          {process.env.NODE_ENV !== "production" && (
-            <Link href="/admin">Manage content</Link>
-          )}
         </div>
       </div>
     </footer>

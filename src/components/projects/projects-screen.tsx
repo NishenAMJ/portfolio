@@ -17,7 +17,7 @@ export function ProjectsScreen() {
         <div>
           <h1>Things I’ve built.</h1>
           <p className="lead">
-            A team-led mobile lending platform and an ESP32-based IoT system.
+            A peer-to-peer lending platform and an IoT shooting gallery.
           </p>
         </div>
         <div className="filters" aria-label="Filter projects">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TargetIcon } from "@/components/ui/icons";
 import { AcademicCard } from "./academic-card";
 import { SkillsSection } from "./skills-section";
 
@@ -15,18 +16,26 @@ export function AboutScreen() {
           </h1>
           <p className="lead">
             I’m an Information Technology undergraduate at the{" "}
-            <span className="accent">University of Moratuwa</span>, passionate
-            focused on backend services and mobile apps.
+            <span className="accent">University of Moratuwa</span>, focused on
+            backend services and mobile apps.
           </p>
           <p>
             I design REST APIs with JWT and role-based access, model data in
             PostgreSQL and Firebase, and share types end to end in TypeScript. I
-            led a five-person team on Smart Credit+ and wrote firmware for the
-            Smart Shooting Gallery.
+            built the borrower mobile app for Smart Credit+ and designed the PCB
+            for the Smart Shooting Gallery.
           </p>
           <div className="callout">
-            <h3>Looking for</h3>
-            <p>A Software Engineering or Full-Stack internship.</p>
+            <span className="icon-tile">
+              <TargetIcon />
+            </span>
+            <div>
+              <h3>CAREER GOAL</h3>
+              <p>
+                To land a Software Engineering or Full-Stack internship, work
+                on real products, and keep growing my backend and mobile skills.
+              </p>
+            </div>
           </div>
           <div className="actions">
             <Link className="button primary" href="/projects">

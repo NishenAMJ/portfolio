@@ -1,45 +1,50 @@
-import Image from "next/image";
-import { Dots } from "@/components/ui/window-dots";
-import { academics, leadership } from "@/data/academics";
+import type { ReactNode } from "react";
+import {
+  BookIcon,
+  ChipIcon,
+  CodeIcon,
+  GraduationIcon,
+} from "@/components/ui/icons";
+import { academics } from "@/data/academics";
+
+const cards: { icon: ReactNode; label: string; title: string; sub: string }[] = [
+  {
+    icon: <GraduationIcon />,
+    label: "UNIVERSITY",
+    title: academics.institution,
+    sub: academics.faculty,
+  },
+  {
+    icon: <BookIcon />,
+    label: "DEGREE",
+    title: academics.degree.replace("B.Sc. (Hons) in ", "BSc (Hons) "),
+    sub: academics.standing,
+  },
+  {
+    icon: <CodeIcon />,
+    label: "PRIMARY FOCUS",
+    title: "Backend & Mobile Development",
+    sub: "Full-Stack Engineering",
+  },
+  {
+    icon: <ChipIcon />,
+    label: "CURRENTLY EXPLORING",
+    title: "Real-Time Systems & IoT",
+    sub: "Learning in progress",
+  },
+];
 
 export function AcademicCard() {
   return (
-    <div className="academic panel">
-      <div className="panel-bar">
-        <Dots />
-        <span>Education & community</span>
-      </div>
-      <div className="panel-body">
-        <div className="academic-heading">
-          <span className="icon-tile">
-            <Image
-              src="/design/university.svg"
-              alt=""
-              width={16.5}
-              height={13.5}
-            />
-          </span>
-          <div>
-            <small>INSTITUTION</small>
-            <h3>{academics.institution}</h3>
-            <p>{academics.faculty}</p>
-          </div>
-        </div>
-        <div className="academic-row">
-          <small>DEGREE</small>
-          <h3>{academics.degree}</h3>
-          <p>{academics.standing}</p>
-        </div>
-        <div className="academic-row">
-          <small>LEADERSHIP & COMMUNITY</small>
-          <h3>{leadership.event}</h3>
-          <p>{leadership.role}</p>
-        </div>
-        <div className="academic-bottom">
-          <span>{academics.location}</span>
-          <span className="accent">Full-Stack Engineering</span>
-        </div>
-      </div>
+    <div className="info-grid">
+      {cards.map((c) => (
+        <article className="info-card" key={c.label}>
+          <span className="icon-tile">{c.icon}</span>
+          <small>{c.label}</small>
+          <h3>{c.title}</h3>
+          <p>{c.sub}</p>
+        </article>
+      ))}
     </div>
   );
 }

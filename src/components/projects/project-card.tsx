@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Tags } from "@/components/ui/tags";
 import { Dots } from "@/components/ui/window-dots";
 import type { Project } from "@/types/portfolio";
@@ -104,9 +103,6 @@ export function ProjectCard({
                 Live demo ↗
               </a>
             )}
-            <Link className="button secondary" href="/experience#contact">
-              Discuss this project
-            </Link>
           </div>
         </div>
       </div>

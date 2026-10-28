@@ -3,24 +3,26 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ResumeLink } from "@/components/ui/resume-link";
+import { DownloadIcon } from "@/components/ui/icons";
+import { useProfile } from "@/context/portfolio-provider";
 
 export function Header() {
   const pathname = usePathname();
+  const { profile } = useProfile();
   const [open, setOpen] = useState(false);
   const links = [
     ["Home", "/"],
     ["About", "/about"],
     ["Skills", "/about#skills"],
     ["Projects", "/projects"],
-    ["Experience", "/experience"],
+    ["Education", "/experience#education"],
     ["Contact", "/experience#contact"],
   ];
   return (
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand">
-          <span className="brand-mark">&lt;JN /&gt;</span>Janith Nishen
+          Janith
         </Link>
         <button
           className="menu-button"
@@ -48,10 +50,19 @@ export function Header() {
           ))}
         </nav>
         <div className="header-action">
-          <ResumeLink />
-          <Link className="contact-button" href="/experience#contact">
-            Let’s talk <span>↗</span>
-          </Link>
+          {profile.resume ? (
+            <a
+              className="contact-button"
+              href={profile.resume}
+              download={profile.resumeName}
+            >
+              <DownloadIcon /> Download CV
+            </a>
+          ) : (
+            <Link className="contact-button" href="/experience#contact">
+              Let’s talk <span>↗</span>
+            </Link>
+          )}
         </div>
       </div>
     </header>
