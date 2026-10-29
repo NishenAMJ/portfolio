@@ -61,7 +61,7 @@ export function ProjectsScreen() {
             behind it.
           </p>
         </div>
-        <Link className="button primary" href="/experience#contact">
+        <Link className="button primary" href="/contact">
           Let’s talk →
         </Link>
       </div>

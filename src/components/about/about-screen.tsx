@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { TargetIcon } from "@/components/ui/icons";
 import { AcademicCard } from "./academic-card";
 import { SkillsSection } from "./skills-section";
 
@@ -15,33 +14,20 @@ export function AboutScreen() {
             <em>Building with purpose.</em>
           </h1>
           <p className="lead">
-            I’m an Information Technology undergraduate at the{" "}
-            <span className="accent">University of Moratuwa</span>, focused on
-            backend services and mobile apps.
+            I like understanding how things work, breaking down unfamiliar
+            problems, and improving an idea through experimentation and feedback.
           </p>
           <p>
-            I design REST APIs with JWT and role-based access, model data in
-            PostgreSQL and Firebase, and share types end to end in TypeScript. I
-            built the borrower mobile app for Smart Credit+ and designed the PCB
-            for the Smart Shooting Gallery.
+            Team projects have taught me to value clear communication, shared
+            responsibility, and learning from different perspectives. I aim to
+            bring that mindset to my work: ask thoughtful questions, stay open to
+            feedback, and follow through on what I take on.
           </p>
-          <div className="callout">
-            <span className="icon-tile">
-              <TargetIcon />
-            </span>
-            <div>
-              <h3>CAREER GOAL</h3>
-              <p>
-                To land a Software Engineering or Full-Stack internship, work
-                on real products, and keep growing my backend and mobile skills.
-              </p>
-            </div>
-          </div>
           <div className="actions">
             <Link className="button primary" href="/projects">
               View Projects →
             </Link>
-            <Link className="button secondary" href="/experience#contact">
+            <Link className="button secondary" href="/contact">
               Get in touch
             </Link>
           </div>

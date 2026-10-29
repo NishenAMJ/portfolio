@@ -16,10 +16,10 @@ export function Header() {
     ["Skills", "/about#skills"],
     ["Projects", "/projects"],
     ["Education", "/experience#education"],
-    ["Contact", "/experience#contact"],
+    ["Contact", "/contact"],
   ];
   return (
-    <header className="site-header">
+    <header className="site-header" data-home={pathname === "/"}>
       <div className="header-inner">
         <Link href="/" className="brand">
           Janith
@@ -59,7 +59,7 @@ export function Header() {
               <DownloadIcon /> Download CV
             </a>
           ) : (
-            <Link className="contact-button" href="/experience#contact">
+            <Link className="contact-button" href="/contact">
               Let’s talk <span>↗</span>
             </Link>
           )}

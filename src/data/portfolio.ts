@@ -3,7 +3,7 @@ import type { Profile } from "@/types/portfolio";
 export const initial: Profile = {
   available: true,
   headline:
-    "Information Technology undergraduate building backend systems and mobile products.",
+    "Information Technology undergraduate with a passion for software engineering and problem-solving.",
   email: "janithnishen@gmail.com",
   github: "https://github.com/NishenAMJ",
   linkedin: "www.linkedin.com/in/janithnishen",

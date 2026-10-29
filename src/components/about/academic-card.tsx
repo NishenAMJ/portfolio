@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import {
   BookIcon,
-  ChipIcon,
-  CodeIcon,
   GraduationIcon,
 } from "@/components/ui/icons";
 import { academics } from "@/data/academics";
@@ -18,19 +16,7 @@ const cards: { icon: ReactNode; label: string; title: string; sub: string }[] = 
     icon: <BookIcon />,
     label: "DEGREE",
     title: academics.degree.replace("B.Sc. (Hons) in ", "BSc (Hons) "),
-    sub: academics.standing,
-  },
-  {
-    icon: <CodeIcon />,
-    label: "PRIMARY FOCUS",
-    title: "Backend & Mobile Development",
-    sub: "Full-Stack Engineering",
-  },
-  {
-    icon: <ChipIcon />,
-    label: "CURRENTLY EXPLORING",
-    title: "Real-Time Systems & IoT",
-    sub: "Learning in progress",
+    sub: `${academics.standing} · CGPA: ${academics.cgpa}`,
   },
 ];
 

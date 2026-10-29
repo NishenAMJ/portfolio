@@ -9,7 +9,11 @@ import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
 import { academics } from "@/data/academics";
 import { CodeEditor } from "./code-editor";
 
-const roles = ["Backend Developer", "Mobile App Developer", "Full-Stack Engineer"];
+const roles = [
+  "Aspiring Software Engineer",
+  "Creative Problem Solver",
+  "Curious Learner",
+];
 
 export function HomeScreen() {
   const { profile } = useProfile();
@@ -32,16 +36,17 @@ export function HomeScreen() {
           <h2>{profile.headline}</h2>
           <p>
             {academics.standing} at the{" "}
-            <span className="bright">{academics.institution}.</span> I work on
-            REST APIs, databases, and React Native apps, and I built the
-            borrower mobile app for Smart Credit+.
+            <span className="bright">{academics.institution}.</span> I enjoy
+            exploring new technologies, turning ideas into practical solutions,
+            and learning through hands-on projects. I’m eager to collaborate,
+            contribute to meaningful work, and grow as a software engineer.
           </p>
           <div className="actions">
             <Link className="button primary" href="/projects">
               View My Projects{" "}
               <Image src="/design/explore.svg" alt="" width={12} height={12} />
             </Link>
-            <Link className="button secondary" href="/experience#contact">
+            <Link className="button secondary" href="/contact">
               Contact Me
             </Link>
             <ResumeLink />
@@ -54,7 +59,7 @@ export function HomeScreen() {
               <LinkedinIcon />
             </a>
             <a
-              href={profile.email ? `mailto:${profile.email}` : "/experience#contact"}
+              href={profile.email ? `mailto:${profile.email}` : "/contact"}
               aria-label="Email"
             >
               <MailIcon />

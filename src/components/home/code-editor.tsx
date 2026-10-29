@@ -1,10 +1,14 @@
+"use client";
+
 import { Dots } from "@/components/ui/window-dots";
+import { useProfile } from "@/context/portfolio-provider";
+import { groups } from "@/data/skill-groups";
 
 const files = [
   {
     name: "profile",
     lines: [
-      "import { Developer } from '@uom/engineering';",
+      "import { Developer } from '@uom/IT';",
       "",
       "export const janithNishen: Developer = {",
       "  role: 'Software Engineer',",
@@ -17,37 +21,46 @@ const files = [
       "    'Mobile Applications'",
       "  ],",
       "",
-      "  passionateAbout: 'Solving real problems',",
+      "  passionateAbout: 'Solving real world problems', ",
       "  alwaysLearning: true",
-      "};",
-    ],
-  },
-  {
-    name: "skills",
-    lines: [
-      "export const skills = {",
-      "  languages: [",
-      "    'TypeScript', 'Java', 'Python'",
-      "  ],",
-      "  frontend: ['React', 'React Native'],",
-      "  backend: ['NestJS', 'Node.js'],",
-      "  databases: [",
-      "    'PostgreSQL', 'MongoDB', 'Firebase'",
-      "  ],",
-      "  tools: ['Git', 'Postman', 'VS Code']",
       "};",
     ],
   },
 ];
 
 export function CodeEditor() {
+  const { profile } = useProfile();
+  const known = groups.flatMap((group) => group.items);
+  const extra = profile.skills.filter((skill) => !known.includes(skill));
+  const skillGroups = groups.map((group) => ({
+    title: group.title,
+    items: group.items.filter((skill) => profile.skills.includes(skill)),
+  }));
+  if (extra.length > 0) skillGroups.push({ title: "More tools", items: extra });
+  const quote = (value: string) =>
+    `'${JSON.stringify(value).slice(1, -1).replace(/'/g, "\\'")}'`;
+  const editorFiles = [
+    ...files,
+    {
+      name: "skills",
+      lines: [
+        "export const skills = {",
+        ...skillGroups.flatMap((group) => [
+          `  ${quote(group.title)}: [`,
+          `    ${group.items.map(quote).join(", ")}`,
+          "  ],",
+        ]),
+        "};",
+      ],
+    },
+  ];
   return (
     <div className="code-editor">
       <div className="editor-bar">
         <Dots />
       </div>
       <div className="editor-split">
-        {files.map((f) => (
+        {editorFiles.map((f) => (
           <div className="editor-pane" key={f.name}>
             <div className="pane-tab">
               <span>TS</span> {f.name}.ts
