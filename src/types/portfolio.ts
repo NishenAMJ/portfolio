@@ -22,6 +22,7 @@ export type Profile = {
   email: string;
   github: string;
   linkedin: string;
+  medium: string;
   resume: string;
   resumeName: string;
   skills: string[];

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { initial as profile } from "@/data/portfolio";
 import { ResumeLink } from "@/components/ui/resume-link";
 import { TypedRole } from "@/components/ui/typed-role";
-import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, MailIcon, MediumIcon } from "@/components/ui/icons";
 import { academics } from "@/data/academics";
 import { CodeEditor } from "./code-editor";
 
@@ -52,6 +52,9 @@ export function HomeScreen() {
             <ResumeLink />
           </div>
           <div className="socials">
+            <a href={profile.medium} aria-label="Read my articles on Medium" title="Medium" target="_blank" rel="noreferrer">
+              <MediumIcon />
+            </a>
             <a href={profile.github} aria-label="GitHub" target="_blank" rel="noreferrer">
               <GithubIcon />
             </a>

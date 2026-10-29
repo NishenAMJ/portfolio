@@ -9,6 +9,9 @@ export function Footer() {
       <div className="footer-inner">
         <span>© 2026 Janith Nishen</span>
         <div>
+          <a href={profile.medium} target="_blank" rel="noreferrer">
+            Medium ↗
+          </a>
           <a href={profile.github} target="_blank" rel="noreferrer">
             GitHub ↗
           </a>
