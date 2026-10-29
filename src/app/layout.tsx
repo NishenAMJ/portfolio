@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
-  title: "Janith Nishen | Software Engineering Portfolio",
+  title: "Janith Nishen",
   description:
     "Information Technology undergraduate at the University of Moratuwa. Explore my work in full-stack development, mobile applications, and connected systems.",
 };
