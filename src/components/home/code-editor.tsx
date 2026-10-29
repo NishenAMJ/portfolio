@@ -1,7 +1,7 @@
 "use client";
 
 import { Dots } from "@/components/ui/window-dots";
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 import { groups } from "@/data/skill-groups";
 
 const files = [
@@ -29,7 +29,7 @@ const files = [
 ];
 
 export function CodeEditor() {
-  const { profile } = useProfile();
+
   const known = groups.flatMap((group) => group.items);
   const extra = profile.skills.filter((skill) => !known.includes(skill));
   const skillGroups = groups.map((group) => ({

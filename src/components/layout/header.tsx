@@ -4,11 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { DownloadIcon } from "@/components/ui/icons";
-import { useProfile } from "@/context/portfolio-provider";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { initial as profile } from "@/data/portfolio";
 
 export function Header() {
   const pathname = usePathname();
-  const { profile } = useProfile();
+
   const [open, setOpen] = useState(false);
   const links = [
     ["Home", "/"],
@@ -19,7 +20,7 @@ export function Header() {
     ["Contact", "/contact"],
   ];
   return (
-    <header className="site-header" data-home={pathname === "/"}>
+    <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand">
           Janith
@@ -49,6 +50,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <ThemeToggle />
         <div className="header-action">
           {profile.resume ? (
             <a

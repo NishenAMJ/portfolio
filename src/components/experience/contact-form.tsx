@@ -1,15 +1,15 @@
 "use client";
 
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 import { useState, type FormEvent } from "react";
 
 export function ContactForm() {
-  const { profile } = useProfile();
+
   const [message, setMessage] = useState("");
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nCompany: ${data.get("company")}\nOpportunity: ${data.get("type")}\n\n${data.get("message")}`;
+    const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`;
     if (profile.email) {
       window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent("Portfolio enquiry from " + data.get("name"))}&body=${encodeURIComponent(body)}`;
       setMessage(
@@ -28,26 +28,13 @@ export function ContactForm() {
   }
   return (
     <section id="contact" className="contact-card panel">
-      <h2>Have an opportunity in mind?</h2>
-      <p>
-        Recruiters and engineering teams: tell me about the role and I’ll reply
-        with relevant project details.
-      </p>
-      <div className="contact-links">
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">
-          LinkedIn ↗
-        </a>
-        {profile.email && (
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        )}
-      </div>
+      <h2>Send a message</h2>
       <form onSubmit={submit}>
         <div className="form-grid">
           <label>
-            Your name
+            Name
             <input
               name="name"
-              placeholder="Sarah Jenkins"
               required
               maxLength={100}
               autoComplete="name"
@@ -57,29 +44,10 @@ export function ContactForm() {
             Email
             <input
               name="email"
-              placeholder="sarah@company.com"
               required
               type="email"
               autoComplete="email"
             />
-          </label>
-          <label>
-            Company
-            <input
-              name="company"
-              placeholder="Your company"
-              autoComplete="organization"
-              maxLength={150}
-            />
-          </label>
-          <label>
-            Opportunity
-            <select name="type">
-              <option>Software Engineering Internship</option>
-              <option>Full-Stack Internship</option>
-              <option>Project collaboration</option>
-              <option>Other</option>
-            </select>
           </label>
         </div>
         <label>
@@ -90,7 +58,6 @@ export function ContactForm() {
             minLength={10}
             maxLength={5000}
             rows={5}
-            placeholder="Tell me a little about your team and the opportunity…"
           />
         </label>
         <div className="form-bottom">

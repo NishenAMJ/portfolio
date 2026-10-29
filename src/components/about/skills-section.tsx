@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 import {
   CodeIcon,
   DatabaseIcon,
@@ -40,7 +40,7 @@ function SkillChip({ name }: { name: string }) {
 }
 
 export function SkillsSection() {
-  const { profile } = useProfile();
+
   const known = groups.flatMap((g) => g.items);
   const extra = profile.skills.filter((s) => !known.includes(s));
   return (

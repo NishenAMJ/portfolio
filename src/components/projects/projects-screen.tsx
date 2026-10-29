@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 import { useState } from "react";
 import { ProjectCard } from "./project-card";
 
 export function ProjectsScreen() {
-  const { profile } = useProfile();
+
   const [filter, setFilter] = useState("All");
   const projects = profile.projects.filter((p) => p.published);
   const categories = ["All", ...new Set(projects.map((p) => p.category))];

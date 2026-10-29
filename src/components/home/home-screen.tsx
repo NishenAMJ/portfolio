@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 import { ResumeLink } from "@/components/ui/resume-link";
 import { TypedRole } from "@/components/ui/typed-role";
 import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
@@ -16,7 +16,7 @@ const roles = [
 ];
 
 export function HomeScreen() {
-  const { profile } = useProfile();
+
   return (
     <main className="home-main">
       <section className="hero container">

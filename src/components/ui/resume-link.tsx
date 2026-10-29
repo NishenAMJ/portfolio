@@ -1,9 +1,9 @@
 "use client";
 
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 
 export function ResumeLink() {
-  const { profile } = useProfile();
+
   return profile.resume ? (
     <a
       className="button secondary"

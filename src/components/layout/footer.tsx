@@ -1,9 +1,9 @@
 "use client";
 
-import { useProfile } from "@/context/portfolio-provider";
+import { initial as profile } from "@/data/portfolio";
 
 export function Footer() {
-  const { profile } = useProfile();
+
   return (
     <footer>
       <div className="footer-inner">
