@@ -6,7 +6,7 @@ export const initial: Profile = {
     "Information Technology undergraduate with a passion for software engineering and problem-solving.",
   email: "janithnishen@gmail.com",
   github: "https://github.com/NishenAMJ",
-  linkedin: "www.linkedin.com/in/janithnishen",
+  linkedin: "https://www.linkedin.com/in/janithnishen",
   resume: "/Janith_Nishen_Resume.pdf",
   resumeName: "Janith_Nishen_Resume.pdf",
   skills: [
