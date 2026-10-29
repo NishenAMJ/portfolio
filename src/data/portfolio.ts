@@ -7,6 +7,7 @@ export const initial: Profile = {
   email: "janithnishen@gmail.com",
   github: "https://github.com/NishenAMJ",
   linkedin: "https://www.linkedin.com/in/janithnishen",
+  medium: "https://medium.com/@janithnishen21",
   resume: "/Janith_Nishen_Resume.pdf",
   resumeName: "Janith_Nishen_Resume.pdf",
   skills: [
