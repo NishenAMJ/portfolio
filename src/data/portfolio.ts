@@ -34,6 +34,11 @@ export const initial: Profile = {
     "Postman",
     "VS Code",
     "Android Studio",
+    "Linux",
+    "Bash",
+    "Docker",
+    "GitHub Actions",
+    "AWS",
   ],
   projects: [
     {

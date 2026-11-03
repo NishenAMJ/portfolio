@@ -7,32 +7,38 @@ export type SkillGroup = {
 
 export const groups: SkillGroup[] = [
   {
-    title: "Languages",
-    description: "Languages across web, mobile, and embedded work.",
+    title: "Programming Languages",
+    description: "Languages across web, mobile, and software engineering work.",
     icon: "code",
     items: ["TypeScript", "JavaScript", "Java", "Python", "C"],
   },
   {
-    title: "Frontend & Mobile",
+    title: "Frontend",
     description: "Web and cross-platform mobile interfaces.",
     icon: "monitor",
     items: ["React.js", "Next.js", "React Native", "HTML5", "CSS3"],
   },
   {
-    title: "Backend & APIs",
+    title: "Backend",
     description: "Server-side services and REST APIs.",
     icon: "server",
-    items: ["NestJS", "Next.js", "Node.js", "Express.js", "REST APIs"],
+    items: ["Node.js", "NestJS", "Express.js", "REST APIs"],
   },
   {
-    title: "Databases & Cloud",
+    title: "Databases",
     description: "Relational and document data stores.",
     icon: "database",
     items: ["Firebase", "MongoDB", "MySQL", "PostgreSQL"],
   },
   {
-    title: "Developer Tools & Workflow",
-    description: "Version control, API testing, and editors.",
+    title: "DevOps & Cloud",
+    description: "Development environments, automation, containers, and cloud platforms.",
+    icon: "wrench",
+    items: ["Linux", "Bash", "Docker", "GitHub Actions", "AWS"],
+  },
+  {
+    title: "Tools",
+    description: "Version control, API testing, and development tools.",
     icon: "wrench",
     items: ["Git", "GitHub", "Postman", "VS Code", "Android Studio"],
   },
@@ -53,6 +59,11 @@ export const brandIcons: Record<string, string> = {
   NestJS: "nestjs",
   "Node.js": "nodejs",
   "Express.js": "express",
+  Linux: "linux",
+  Bash: "bash",
+  Docker: "docker",
+  "GitHub Actions": "githubactions",
+  AWS: "amazonwebservices",
   Firebase: "firebase",
   MongoDB: "mongodb",
   MySQL: "mysql",
@@ -62,4 +73,8 @@ export const brandIcons: Record<string, string> = {
   Postman: "postman",
   "VS Code": "vscode",
   "Android Studio": "androidstudio",
+};
+
+export const brandIconFiles: Record<string, string> = {
+  AWS: "amazonwebservices-original-wordmark.svg",
 };
