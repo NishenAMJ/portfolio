@@ -34,6 +34,11 @@ export const initial: Profile = {
     "Postman",
     "VS Code",
     "Android Studio",
+    "Linux",
+    "Bash",
+    "Docker",
+    "GitHub Actions",
+    "AWS",
   ],
   projects: [
     {
@@ -62,7 +67,13 @@ export const initial: Profile = {
       ],
       repoUrl: "https://github.com/NishenAMJ/Smart_Credit_Plus",
       demoUrl: "https://smart-credit-api.vercel.app/",
-      screenshots: ["/projects/smart-credit-home.png"],
+      screenshots: [
+        "/projects/smart%20credit%20plus/Mobile%20screen%201.jpeg",
+        "/projects/smart%20credit%20plus/mobile%20screen%202.jpeg",
+        "/projects/smart%20credit%20plus/mobile%20screen%203.jpeg",
+        "/projects/smart%20credit%20plus/mobile%20screen%205.jpeg",
+        "/projects/smart%20credit%20plus/smart-credit-home.png",
+      ],
     },
     {
       id: "gallery",
