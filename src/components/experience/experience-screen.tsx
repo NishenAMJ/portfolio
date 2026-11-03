@@ -62,6 +62,11 @@ export function ExperienceScreen() {
             <h3>Responsive Web Design</h3>
             <p>freeCodeCamp</p>
           </article>
+          <article className="journey-card">
+            <small className="accent">Course completion</small>
+            <h3>AWS Cloud Practitioner Essentials</h3>
+            <p>Amazon Web Services (AWS)</p>
+          </article>
         </div>
       </section>
     </main>
