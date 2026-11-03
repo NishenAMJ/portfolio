@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { Tags } from "@/components/ui/tags";
 import { Dots } from "@/components/ui/window-dots";
 import type { Project } from "@/types/portfolio";
 import { ProjectPreview } from "./project-preview";
+import { ProjectImageSlider } from "./project-image-slider";
 
 const isHttps = (url?: string): url is string => !!url?.startsWith("https://");
 const isImage = (src: string) => src.startsWith("/") || isHttps(src);
@@ -27,18 +27,7 @@ export function ProjectCard({
       </div>
       <div className="project-content">
         {screenshots.length > 0 ? (
-          <div className="project-shots">
-            {screenshots.map((src, n) => (
-              <Image
-                key={src}
-                src={src}
-                alt={`${p.title} screenshot ${n + 1}`}
-                width={640}
-                height={400}
-                unoptimized={src.startsWith("https://")}
-              />
-            ))}
-          </div>
+          <ProjectImageSlider title={p.title} screenshots={screenshots} />
         ) : (
           <div>
             <ProjectPreview kind={p.id} />
