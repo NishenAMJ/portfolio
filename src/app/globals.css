@@ -1465,6 +1465,65 @@ select {
   height: auto;
   border-radius: 8px;
 }
+.project-slider {
+  min-width: 0;
+}
+.project-slider-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #3a3636;
+}
+.project-slider-frame img {
+  object-fit: contain;
+}
+.project-slider-button {
+  position: absolute;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--background) 85%, transparent);
+  color: var(--foreground);
+  font-size: 26px;
+  line-height: 1;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.project-slider-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.project-slider-button.previous {
+  left: 10px;
+}
+.project-slider-button.next {
+  right: 10px;
+}
+.project-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 12px;
+}
+.project-slider-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: 0.55;
+  cursor: pointer;
+}
+.project-slider-dots button.active {
+  background: var(--accent);
+  opacity: 1;
+}
 .project-result {
   margin-top: 12px;
 }

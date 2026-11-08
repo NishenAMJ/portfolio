@@ -7,6 +7,7 @@ export const initial: Profile = {
   email: "janithnishen@gmail.com",
   github: "https://github.com/NishenAMJ",
   linkedin: "https://www.linkedin.com/in/janithnishen",
+  medium: "https://medium.com/@janithnishen21",
   resume: "/Janith_Nishen_Resume.pdf",
   resumeName: "Janith_Nishen_Resume.pdf",
   skills: [
@@ -33,8 +34,43 @@ export const initial: Profile = {
     "Postman",
     "VS Code",
     "Android Studio",
+    "Linux",
+    "Bash",
+    "Docker",
+    "GitHub Actions",
+    "AWS",
   ],
   projects: [
+    {
+      id: "rentalhub",
+      title: "RentalHub Sri Lanka",
+      category: "Full-Stack / DevOps",
+      description:
+        "A rental marketplace built with a Next.js web app and NestJS API, backed by Supabase Auth and PostgreSQL. Implemented listing discovery, owner tools, booking and admin workflows, with containerized builds and CI checks.",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "NestJS",
+        "Supabase",
+        "PostgreSQL",
+        "Prisma",
+        "Docker",
+        "GitHub Actions",
+      ],
+      published: true,
+      subtitle: "Full-stack rental marketplace",
+      role: "Full-stack development & deployment workflows - Personal project",
+      highlights: [
+        "Built property and item listing, search, filtering, owner management, and admin review workflows.",
+        "Connected the web app and API to Supabase authentication and PostgreSQL through Prisma.",
+        "Added Docker-based app builds and GitHub Actions checks; the web frontend is hosted on Vercel.",
+      ],
+      
+      repoUrl: "https://github.com/NishenAMJ/RentalAds",
+      demoUrl: "https://rental-ads.vercel.app/",
+      screenshots: ["/projects/Rental%20Hub/RentalHub%20Home%20Screen.png"],
+    },
     {
       id: "credit",
       title: "Smart Credit+",
@@ -61,7 +97,13 @@ export const initial: Profile = {
       ],
       repoUrl: "https://github.com/NishenAMJ/Smart_Credit_Plus",
       demoUrl: "https://smart-credit-api.vercel.app/",
-      screenshots: ["/projects/smart-credit-home.png"],
+      screenshots: [
+        "/projects/smart%20credit%20plus/Mobile%20screen%201.jpeg",
+        "/projects/smart%20credit%20plus/mobile%20screen%202.jpeg",
+        "/projects/smart%20credit%20plus/mobile%20screen%203.jpeg",
+        "/projects/smart%20credit%20plus/mobile%20screen%205.jpeg",
+        "/projects/smart%20credit%20plus/smart-credit-home.png",
+      ],
     },
     {
       id: "gallery",

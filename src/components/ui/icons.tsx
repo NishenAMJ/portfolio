@@ -1,6 +1,14 @@
 import type { ReactNode } from "react";
 
 // Minimal stroke icons (Lucide-style) so no icon package is needed.
+export const MediumIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <circle cx="7" cy="12" r="6" />
+    <ellipse cx="17" cy="12" rx="3" ry="6" />
+    <ellipse cx="22" cy="12" rx="1" ry="5" />
+  </svg>
+);
+
 function Icon({ children, size = 20 }: { children: ReactNode; size?: number }) {
   return (
     <svg

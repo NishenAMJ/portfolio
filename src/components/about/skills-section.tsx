@@ -9,7 +9,7 @@ import {
   ServerIcon,
   WrenchIcon,
 } from "@/components/ui/icons";
-import { brandIcons, groups } from "@/data/skill-groups";
+import { brandIconFiles, brandIcons, groups } from "@/data/skill-groups";
 
 const groupIcons: Record<(typeof groups)[number]["icon"], ReactNode> = {
   code: <CodeIcon />,
@@ -21,13 +21,14 @@ const groupIcons: Record<(typeof groups)[number]["icon"], ReactNode> = {
 
 function SkillChip({ name }: { name: string }) {
   const slug = brandIcons[name];
+  const iconFile = brandIconFiles[name] ?? `${slug}-original.svg`;
   return (
     <span className="skill-chip">
       {slug && (
         // Remote SVG from the Devicon CDN; next/image would need a remotePatterns entry.
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/${slug}/${slug}-original.svg`}
+          src={`https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/${slug}/${iconFile}`}
           alt=""
           width={20}
           height={20}
