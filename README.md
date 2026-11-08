@@ -1,4 +1,4 @@
-﻿# Janith Nishen — Portfolio
+﻿# Janith Nishen - Portfolio
 
 A responsive Next.js implementation of the five supplied Figma screens, with compact top navigation and simplified content.
 
