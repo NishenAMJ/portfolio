@@ -42,6 +42,36 @@ export const initial: Profile = {
   ],
   projects: [
     {
+      id: "rentalhub",
+      title: "RentalHub Sri Lanka",
+      category: "Full-Stack / DevOps",
+      description:
+        "A rental marketplace built with a Next.js web app and NestJS API, backed by Supabase Auth and PostgreSQL. Implemented listing discovery, owner tools, booking and admin workflows, with containerized builds and CI checks.",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "NestJS",
+        "Supabase",
+        "PostgreSQL",
+        "Prisma",
+        "Docker",
+        "GitHub Actions",
+      ],
+      published: true,
+      subtitle: "Full-stack rental marketplace",
+      role: "Full-stack development & deployment workflows - Personal project",
+      highlights: [
+        "Built property and item listing, search, filtering, owner management, and admin review workflows.",
+        "Connected the web app and API to Supabase authentication and PostgreSQL through Prisma.",
+        "Added Docker-based app builds and GitHub Actions checks; the web frontend is hosted on Vercel.",
+      ],
+      
+      repoUrl: "https://github.com/NishenAMJ/RentalAds",
+      demoUrl: "https://rental-ads.vercel.app/",
+      screenshots: ["/projects/Rental%20Hub/RentalHub%20Home%20Screen.png"],
+    },
+    {
       id: "credit",
       title: "Smart Credit+",
       category: "Fintech / Mobile",
